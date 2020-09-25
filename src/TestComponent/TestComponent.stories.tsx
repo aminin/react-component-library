@@ -1,10 +1,13 @@
 import React from "react";
 import TestComponent from "./TestComponent";
+import withReduxForm from "../withReduxForm";
 
 export default {
   title: "TestComponent"
 };
 
-export const Primary = () => <TestComponent theme="primary" />;
+const onSubmit = (formData) => alert("Submitted! " + formData["name"]);
 
-export const Secondary = () => <TestComponent theme="secondary" />;
+export const Primary = () => withReduxForm(TestComponent, {theme:"primary", onSubmit});
+
+export const Secondary = () => withReduxForm(TestComponent, {theme:"secondary", onSubmit});
