@@ -21,6 +21,11 @@ export default {
       sourcemap: true
     }
   ],
+  external: [
+    "react",
+    "react-dom",
+    "redux-form",
+  ],
   plugins: [
     peerDepsExternal(),
     resolve(),
